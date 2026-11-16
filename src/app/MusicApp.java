@@ -35,8 +35,6 @@ public class MusicApp {
         changePlan(1); // default: Free
     }
 
-    // ===== SEARCH & PLAYLIST (B) =====
-    /** source: 0 = both, 1 = local, 2 = online */
     public List<Track> search(String artist, String title, int source) {
         List<Track> results = new ArrayList<>();
         for (Storage s : storages) {
