@@ -31,7 +31,7 @@ public class MusicApp {
         player.addListener(display);
         player.addListener(historyTracker);
         storages.add(new LocalStorage());
-        storages.add(new OnlineStorageAdapter(new OnlineStorage()));
+        storages.add(new OnlineStorageAdapter());
         changePlan(1); // default: Free
     }
 
