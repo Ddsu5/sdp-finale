@@ -34,7 +34,7 @@ public class Main {
         System.out.println("Goodbye!");
     }
 
-// ---------- SCREENS ----------
+//SCREENS
     private static void choosePlan() {
         System.out.println("\nSelect plan:");
         System.out.println("1. Free    (ads, 128 kbps)");
@@ -93,6 +93,7 @@ public class Main {
             System.out.println(app.removeFromPlaylist(id) ? "Removed." : "ID not found.");
         }
     }
+
 
     private static void playbackScreen() {
         if (app.getPlaylist().isEmpty()) {

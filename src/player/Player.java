@@ -54,7 +54,9 @@ public class Player {
     public void prev(){
         int size = playlist.getTracks().size();
         if (size == 0) return;
-        if (current < 0 || current >= size) { play(); return; }
+        if (current < 0 || current >= size) {
+            play(); return;
+        }
         current = (current - 1 + size) % size;
         fireStarted();}
 
