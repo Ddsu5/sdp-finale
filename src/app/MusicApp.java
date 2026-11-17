@@ -77,7 +77,11 @@ public class MusicApp {
 
     // ===== PLAN (C) =====
     public void changePlan(int choice) {
-        plan = (choice == 2) ? new PremiumFactory() : new FreeFactory();
+        if (choice == 2) {
+            plan = new PremiumFactory();
+        } else {
+            plan = new FreeFactory();
+        }
         adProvider = plan.createAdProvider();
         display.setQualityPolicy(plan.createQualityPolicy());
     }

@@ -6,7 +6,9 @@ import plan.QualityPolicy;
 public class ConsoleDisplay implements PlayerListener {
     private QualityPolicy quality;
 
-    public void setQualityPolicy(QualityPolicy quality) { this.quality = quality; }
+    public void setQualityPolicy(QualityPolicy quality) {
+        this.quality = quality;
+    }
 
     @Override
     public void onTrackStarted(Track track) {
@@ -14,7 +16,7 @@ public class ConsoleDisplay implements PlayerListener {
     }
 
     @Override
-    public void onStopped() {
+    public void onStopped(){
         System.out.println("Playback stopped.");
     }
 }
