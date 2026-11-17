@@ -4,7 +4,6 @@ import model.Track;
 import java.util.List;
 import java.util.Scanner;
 
-/** Reads input and prints output only. Knows MusicApp and Track, nothing else. */
 public class Main {
     private static final Scanner in = new Scanner(System.in);
     private static final MusicApp app = new MusicApp();
@@ -35,7 +34,7 @@ public class Main {
         System.out.println("Goodbye!");
     }
 
-    // ---------- screens ----------
+// ---------- SCREENS ----------
     private static void choosePlan() {
         System.out.println("\nSelect plan:");
         System.out.println("1. Free    (ads, 128 kbps)");
@@ -58,13 +57,21 @@ public class Main {
         String title = in.nextLine().trim();
         System.out.print("Source (1. Local, 2. Online, Enter for both): ");
         String s = in.nextLine().trim();
-        int source = s.equals("1") ? 1 : s.equals("2") ? 2 : 0;
+        int source;
+        if (s.equals("1")) {
+            source = 1;
+        } else if (s.equals("2")) {
+            source = 2;
+        } else {
+            source = 0;
+        }
 
         List<Track> results = app.search(artist, title, source);
         if (results.isEmpty()) {
             System.out.println("No tracks found.");
             return;
         }
+
         printTable(results);
         int id = readInt("Enter Track ID to add (0 to go back): ");
         if (id != 0) {

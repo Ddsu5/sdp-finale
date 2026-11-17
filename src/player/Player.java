@@ -63,6 +63,11 @@ public class Player {
         for (PlayerListener l : listeners) l.onStopped();
     }
 
-    private void fireStarted() {Track t = playlist.getTracks().get(current);
-        for (PlayerListener l : listeners) l.onTrackStarted(t);}
+    private void fireStarted() {
+        Track track = playlist.getTracks().get(current);
+
+        for (PlayerListener listener : listeners) {
+            listener.onTrackStarted(track);
+        }
+    }
 }

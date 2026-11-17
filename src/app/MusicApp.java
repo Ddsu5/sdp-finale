@@ -22,7 +22,7 @@ public class MusicApp {
     private AdProvider adProvider;
     private List<Track> lastResults = new ArrayList<>();
 
-    // ===== CONSTRUCTOR (C) =====
+    //CONSTRUCTOR(Daniyal)
     public MusicApp() {
         playlist = new Playlist();
         player = new Player(playlist);
@@ -58,10 +58,16 @@ public class MusicApp {
 
     public boolean removeFromPlaylist(int id) { return playlist.remove(id); }
 
-    // ===== PLAYBACK (A) =====
-    public void play() { player.play(); }
-    public void prev() { player.prev(); }
-    public void stop() { player.stop(); }
+    // PLAYBACK (Iaroslav)
+    public void play() {
+        player.play();
+    }
+    public void prev() {
+        player.prev();
+    }
+    public void stop() {
+        player.stop();
+    }
 
     public void setMode(int mode) {
         switch (mode) {
